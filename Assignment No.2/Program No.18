@@ -1,0 +1,31 @@
+import java.util.Scanner;
+class Assignment_No_2 
+{
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int choice;
+        if (num > 0){
+            choice = 1;
+        }
+        else if (num < 0){
+            choice = 2;
+        }
+        else{
+            choice = 0;
+        }
+        switch(choice)
+        {
+            case 0:
+                System.out.println("Number is zero.");
+                break;
+            case 1:
+                System.out.println(num + " is positive.");
+                break;
+            case 2:
+                System.out.println(num + " is negative.");
+                break;
+        }
+    }
+}
