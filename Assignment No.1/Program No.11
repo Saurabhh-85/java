@@ -1,0 +1,17 @@
+import java.util.Scanner;
+class Assignment_No_1
+{
+    public static void main(String []args)
+    {
+        System.out.print("Enter the marks out of 10: ");
+        Scanner sc = new Scanner(System.in);
+        float num1 = sc.nextFloat();
+        float num2 = sc.nextFloat();
+        float num3 = sc.nextFloat();
+        float num4 = sc.nextFloat();
+        float num5 = sc.nextFloat();
+        System.out.println("The sum of the numbers is: "+ (num1 + num2 + num3 + num4 + num5));
+        System.out.println("The average of the numbers is: "+ (num1 + num2 + num3 + num4 + num5)/5);
+        System.out.println("The percentage of the numbers is: "+ ((num1 + num2 + num3 + num4 + num5)/50)*100);
+    }
+}
