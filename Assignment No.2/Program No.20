@@ -1,0 +1,33 @@
+import java.util.Scanner;
+class Assignment_No_2 
+{
+    public static void main(String []args)
+    {
+        System.out.println("Enter 1 to find area of Circle, 2 to find area of Rectangle, 3 to find area of Square and 4 to find area of Triangle: ");   
+        Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+        switch(choice)
+        {
+            case 1:
+                float radius = sc.nextFloat();
+                System.out.println("The area of the circle is: " + (3.14*radius*radius));
+                break;
+            case 2:
+                float length = sc.nextFloat();
+                float breadth = sc.nextFloat();
+                System.out.println("The area of the rectangle is: " + (length*breadth));
+                break;
+            case 3:
+                float side = sc.nextFloat();
+                System.out.println("The area of the square is: " + (side*side));
+                break;
+            case 4:
+                float base = sc.nextFloat();
+                float height = sc.nextFloat();
+                System.out.println("The area of triangle is: " + (0.5*base*height));
+                break;
+            default:
+                System.out.println("Please enter a valid choice.");
+        }
+    }
+}
