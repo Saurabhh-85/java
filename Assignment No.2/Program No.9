@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class Assignment_No_2 
+{
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        if (number < 10) 
+        {
+            System.out.println("Single-digit number.");
+        } 
+        else if (number < 100) 
+        {
+            System.out.println("Two-digit number.");
+        } 
+        else if (number < 1000) 
+        {
+            System.out.println("Three-digit number.");
+        } 
+        else 
+        {
+            System.out.println("More than three digits.");
+        }
+    }
+}
