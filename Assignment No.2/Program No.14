@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Assignment_No_2 
+{
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        char opr = sc.next().charAt((0));
+        switch(opr)
+        {
+            case '+':
+                System.out.println("The addition is: " + (num1 + num2));
+                break;
+            case '-':
+                System.out.println("The subtraction is: " + (num1 - num2));
+                break;
+            case '*':
+                System.out.println("The multiplication is: " + (num1 * num2));
+                break;
+            case '/':
+                System.out.println("The quotient is: " + (num1 / num2));
+                break;
+            case '%':
+                System.out.println("The remainder is: " + (num1 % num2));
+        }
+    }
+}
