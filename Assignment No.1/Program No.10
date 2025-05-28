@@ -1,0 +1,12 @@
+import java.util.Scanner;
+class Assignment_No_1
+{
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int firstDigit = num / 1000;
+        int lastDigit = num % 10;
+        System.out.println("The sum of first and last digit of the number, you have entered is: "+ (firstDigit + lastDigit));
+    }
+}
