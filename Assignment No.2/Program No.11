@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class Assignment_No_2 
+{
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        char ch = sc.next().charAt(0);
+        int ascii_ch = (int) ch;
+        if((ascii_ch >= 65 && ascii_ch <= 90) || (ascii_ch >= 97 && ascii_ch <= 122)){
+            System.out.println("The entered character is an alphabet.");
+        }
+        else if(ascii_ch >= 48 && ascii_ch <= 57){
+            System.out.println("The entered character is a digit.");
+        }
+        else{
+            System.out.println("The entered character is a special character.");
+        }
+    }
+}
