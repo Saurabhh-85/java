@@ -1,0 +1,14 @@
+import java.util.Scanner;
+class Assignment_No_1
+{
+    public static void main(String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int d1 = num / 1000;              // thousands place
+        int d2 = (num / 100) % 10;        // hundreds place
+        int d3 = (num / 10) % 10;         // tens place
+        int d4 = num % 10;                // units place
+        System.out.println("The sum of the digits of the number, you entered is: "+ (d1 + d2 + d3 + d4));
+    }
+}
