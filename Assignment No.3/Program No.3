@@ -1,0 +1,20 @@
+import java.util.Scanner;
+class Assignment_No_3{
+    public static void main(String []args){
+        Scanner sc = new Scanner(System.in);
+        int original_num = sc.nextInt();
+        int rev = 0;
+        int num = original_num;
+        while(num != 0){
+            int digit = num % 10;
+            rev = rev*10 + digit ;
+            num /= 10;
+        }
+        if (rev == original_num){
+            System.out.println(original_num + " is a Palindrome number.");
+        }
+        else{
+            System.out.println(original_num + " isn't a Palindrome number.");
+        }
+    }
+}
