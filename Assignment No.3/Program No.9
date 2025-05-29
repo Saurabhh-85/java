@@ -1,0 +1,16 @@
+class Assignment_No_3 {
+    public static void main(String[] args) {
+        for (int i = 2; i <= 20; i++) {
+            int is_Prime = 1;  
+            for (int j = 2; j <= i / 2; j++) {
+                if (i % j == 0) {
+                    is_Prime = 0; 
+                    break;
+                }
+            }
+            if (is_Prime == 1) {
+                System.out.print(i + "\t");
+            }
+        }
+    }
+}
