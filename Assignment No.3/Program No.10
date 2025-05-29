@@ -1,0 +1,14 @@
+class Assignment_No_3{
+    public static void main(String []args){
+        int a = 0;
+        int b = 1;
+        System.out.print(a + "\t" + b);
+        int next_term = a + b;
+        while(next_term <= 100){
+            System.out.print("\t" + next_term + "\t");
+            a = b;
+            b = next_term;
+            next_term = a + b;
+        }    
+    }
+}
