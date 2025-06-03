@@ -1,0 +1,19 @@
+public class A5 {
+    public void show(int number) {
+        System.out.println("Integer: " + number);
+    }
+    public void show(String text) {
+        System.out.println("String: " + text);
+    }
+    public void show(String text, int number) {
+        System.out.println("String: " + text + ", Integer: " + number);
+    }
+
+    public static void main(String[] args) {
+        A5 display = new A5();
+
+        display.show(42);                        
+        display.show("Hello World");            
+        display.show("Age", 25);             
+    }
+}
