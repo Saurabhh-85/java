@@ -1,0 +1,18 @@
+public class A5 {
+    public double convert(double celsius) {
+        return (celsius * 9/5) + 32;
+    }
+    public double convert(float fahrenheit) {
+        return (fahrenheit - 32) * 5/9;
+    }
+    public double convert(int kelvin) {
+        return kelvin - 273;
+    }
+
+    public static void main(String[] args) {
+        A5 converter = new A5();
+        System.out.println("Celsius to Fahrenheit (25°C): " + converter.convert(25.0) + " °F");
+        System.out.println("Fahrenheit to Celsius (98.6°F): " + converter.convert(98.6f) + " °C");
+        System.out.println("Kelvin to Celsius (300K): " + converter.convert(300) + " °C");
+    }
+}
