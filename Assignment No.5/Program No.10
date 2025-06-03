@@ -1,0 +1,22 @@
+public class A5 {
+    public void draw() {
+        System.out.println("Drawing shape");
+    }
+    public void draw(String shapeName) {
+        System.out.println("Drawing shape: " + shapeName);
+    }
+    public void draw(String shapeName, int size) {
+        System.out.println("Drawing " + shapeName + " with size " + size);
+    }
+    public void draw(String shapeName, int width, int height) {
+        System.out.println("Drawing " + shapeName + " with width " + width + " and height " + height);
+    }
+
+    public static void main(String[] args) {
+        A5 drawer = new A5();
+        drawer.draw();
+        drawer.draw("Circle");
+        drawer.draw("Square", 5);
+        drawer.draw("Rectangle", 10, 20);
+    }
+}
