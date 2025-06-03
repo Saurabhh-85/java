@@ -1,0 +1,37 @@
+public class A5 {
+    String title;
+    String genre;
+    int releaseYear;
+    public A5(String title) {
+        this.title = title;
+        this.genre = null;
+        this.releaseYear = 0;
+    }
+    public A5(String title, String genre) {
+        this.title = title;
+        this.genre = genre;
+        this.releaseYear = 0;
+    }
+    public A5(String title, String genre, int releaseYear) {
+        this.title = title;
+        this.genre = genre;
+        this.releaseYear = releaseYear;
+    }
+
+    public void displayInfo() {
+        System.out.println("Title: " + (title != null ? title : "null"));
+        System.out.println("Genre: " + (genre != null ? genre : "null"));
+        System.out.println("Release Year: " + (releaseYear != 0 ? releaseYear : "Not specified"));
+        System.out.println("----------------------------");
+    }
+
+    public static void main(String[] args) {
+        A5 m1 = new A5("Inception");
+        A5 m2 = new A5("Interstellar", "Sci-Fi");
+        A5 m3 = new A5("The Godfather", "Crime", 1972);
+
+        m1.displayInfo();
+        m2.displayInfo();
+        m3.displayInfo();
+    }
+}
