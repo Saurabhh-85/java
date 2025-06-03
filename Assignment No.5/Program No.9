@@ -1,0 +1,66 @@
+public class A5 {
+    private String accountNumber;
+    private String accountHolderName;
+    private double balance;
+    public A5(String accountNumber) {
+        this.accountNumber = accountNumber;
+        this.accountHolderName = null;
+        this.balance = 0.0;
+    }
+    public A5(String accountNumber, String accountHolderName) {
+        this.accountNumber = accountNumber;
+        this.accountHolderName = accountHolderName;
+        this.balance = 0.0;
+    }
+    public void deposit(int amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited (int): $" + amount);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited (double): $" + amount);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+    public void withdraw(int amount) {
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn (int): $" + amount);
+        } else {
+            System.out.println("Invalid withdrawal or insufficient funds.");
+        }
+    }
+    public void withdraw(double amount) {
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn (double): $" + amount);
+        } else {
+            System.out.println("Invalid withdrawal amount or insufficient funds.");
+        }
+    }
+
+    public void displayAccountInfo() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder: " + (accountHolderName != null ? accountHolderName : "null"));
+        System.out.println("Balance: $" + balance);
+    }
+
+    public static void main(String[] args) {
+        A5 acc1 = new A5("123456789");
+        A5 acc2 = new A5("987654321", "Alice");
+
+        acc1.deposit(1000);
+        acc1.withdraw(250);
+        acc1.displayAccountInfo();
+
+        acc2.deposit(500.75);
+        acc2.withdraw(100.25);
+        acc2.displayAccountInfo();
+    }
+}
