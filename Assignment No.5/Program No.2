@@ -1,0 +1,37 @@
+public class A5 {
+    String name;
+    int age;
+    String department;
+
+    public A5() {
+        this(null, 0, null);
+    }
+    public A5(String name) {
+        this(name, 0, null);
+    }
+    public A5(String name, int age) {
+        this(name, age, null);
+    }
+    public A5(String name, int age, String department) {
+        this.name = name;
+        this.age = age;
+        this.department = department;
+    }
+    public void displayDetails() {
+        System.out.println("Name: " + (name != null ? name : "null"));
+        System.out.println("Age: " + age);
+        System.out.println("Department: " + (department != null ? department : "null"));
+    }
+
+    public static void main(String[] args) {
+        A5 s1 = new A5();
+        A5 s2 = new A5("Alice");
+        A5 s3 = new A5("Bob", 20);
+        A5 s4 = new A5("Charlie", 22, "Computer Science");
+
+        s1.displayDetails();
+        s2.displayDetails();
+        s3.displayDetails();
+        s4.displayDetails();
+    }
+}
