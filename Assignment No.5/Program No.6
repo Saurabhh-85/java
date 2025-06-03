@@ -1,0 +1,36 @@
+public class A5 {
+    int empId;
+    String name;
+    double salary;
+    public A5(int empId) {
+        this.empId = empId;
+        this.name = null;
+        this.salary = 0.0;
+    }
+    public A5(int empId, String name) {
+        this.empId = empId;
+        this.name = name;
+        this.salary = 0.0;
+    }
+    public A5(int empId, String name, double salary) {
+        this.empId = empId;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public void displayProfile() {
+        System.out.println("Employee ID: " + empId);
+        System.out.println("Name: " + (name != null ? name : "null"));
+        System.out.println("Salary: $" + salary);
+    }
+
+    public static void main(String[] args) {
+        A5 e1 = new A5(101);
+        A5 e2 = new A5(102, "Alice");
+        A5 e3 = new A5(103, "Bob", 55000.00);
+
+        e1.displayProfile();
+        e2.displayProfile();
+        e3.displayProfile();
+    }
+}
