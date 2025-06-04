@@ -1,61 +1,53 @@
-public class A5 {
-    public int add(int a, int b) {
-        return a + b;
-    }
-    public double add(double a, double b) {
-        return a + b;
-    }
-    public int add(int a, int b, int c) {
-        return a + b + c;
+import java.util.Scanner;
+class Student {
+    int rollno;
+    String name;
+    int mark1, mark2, mark3;
+    int total;
+    float average;
+
+    Student(int r, String n, int m1, int m2, int m3) {
+        rollno = r;
+        name = n;
+        mark1 = m1;
+        mark2 = m2;
+        mark3 = m3;
+        getTotal(); 
     }
 
-    public int subtract(int a, int b) {
-        return a - b;
-    }
-    public double subtract(double a, double b) {
-        return a - b;
-    }
-    public int subtract(int a, int b, int c) {
-        return a - b - c;
+    void getTotal() {
+        total = mark1 + mark2 + mark3;
+        average = total / 3.0f;
     }
 
-    public int multiply(int a, int b) {
-        return a * b;
+    void displayData() {
+        System.out.println("\nStudent Details:");
+        System.out.println("Roll No : " + rollno);
+        System.out.println("Name    : " + name);
+        System.out.println("Mark 1  : " + mark1);
+        System.out.println("Mark 2  : " + mark2);
+        System.out.println("Mark 3  : " + mark3);
+        System.out.println("Total   : " + total);
+        System.out.println("Average : " + average);
     }
-    public double multiply(double a, double b) {
-        return a * b;
-    }
-    public int multiply(int a, int b, int c) {
-        return a * b * c;
-    }
+}
 
-    public int divide(int a, int b) {
-        return a / b;  
-    }
-    public double divide(double a, double b) {
-        return a / b;
-    }
-    public int divide(int a, int b, int c) {
-        return a / b / c;
-    }
-    
+public class A4 {
     public static void main(String[] args) {
-        A5 calc = new A5();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Roll No: ");
+        int rollno = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter Mark 1: ");
+        int mark1 = sc.nextInt();
+        System.out.print("Enter Mark 2: ");
+        int mark2 = sc.nextInt();
+        System.out.print("Enter Mark 3: ");
+        int mark3 = sc.nextInt();
 
-        System.out.println("Add int: " + calc.add(5, 10));
-        System.out.println("Add double: " + calc.add(5.5, 2.5));
-        System.out.println("Add 3 int: " + calc.add(1, 2, 3));
-
-        System.out.println("Subtract int: " + calc.subtract(10, 3));
-        System.out.println("Subtract double: " + calc.subtract(5.5, 2.0));
-        System.out.println("Subtract 3 int: " + calc.subtract(20, 5, 3));
-
-        System.out.println("Multiply int: " + calc.multiply(3, 4));
-        System.out.println("Multiply double: " + calc.multiply(2.5, 4.0));
-        System.out.println("Multiply 3 int: " + calc.multiply(2, 3, 4));
-
-        System.out.println("Divide int: " + calc.divide(20, 5));
-        System.out.println("Divide double: " + calc.divide(10.0, 2.0));
-        System.out.println("Divide 3 int: " + calc.divide(100, 2, 5));
+        Student s1 = new Student(rollno, name, mark1, mark2, mark3);
+        s1.displayData();
     }
 }

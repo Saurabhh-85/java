@@ -1,0 +1,18 @@
+public class A5 {
+    public double calculate(double radius) {
+        return Math.PI * radius * radius;
+    }
+    public double calculate(double length, double width) {
+        return length * width;
+    }
+    public double calculate(int base, int height) {
+        return 0.5 * base * height;
+    }
+
+    public static void main(String[] args) {
+        A5 areaCalc = new A5();
+        System.out.println("Area of Circle (radius = 5): " + areaCalc.calculate(5.0));
+        System.out.println("Area of Rectangle (length = 4, width = 6): " + areaCalc.calculate(4.0, 6.0));
+        System.out.println("Area of Triangle (base = 3, height = 7): " + areaCalc.calculate(3, 7));
+    }
+}

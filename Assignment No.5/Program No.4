@@ -1,35 +1,43 @@
-public class A5 {
-    String title;
-    String author;
-    double price;
-    public A5(String title) {
-        this.title = title;
-        this.author = null;
-        this.price = 0.0;
-    }
-    public A5(String title, String author) {
-        this.title = title;
-        this.author = author;
-        this.price = 0.0;
-    }
-    public A5(String title, String author, double price) {
-        this.title = title;
-        this.author = author;
-        this.price = price;
-    }
-    public void displayDetails() {
-        System.out.println("Title: " + (title != null ? title : "null"));
-        System.out.println("Author: " + (author != null ? author : "null"));
-        System.out.println("Price: $" + price);
+import java.util.Scanner;
+class Flight {
+    private String flightNumber;
+    private String destination;
+    private int distance;
+    private int fuel;
+
+    Flight() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Flight Number: ");
+        flightNumber = sc.nextLine();
+        System.out.print("Enter Destination: ");
+        destination = sc.nextLine();
+        System.out.print("Enter Distance (in km): ");
+        distance = sc.nextInt();
+        calFuel();
     }
 
+    private void calFuel() {
+        if (distance <= 1000) {
+            fuel = 500;
+        } else if (distance > 1000 && distance <= 2000) {
+            fuel = 1100;
+        } else {
+            fuel = 2200;
+        }
+    }
+
+    public void showInfo() {
+        System.out.println("\nFlight Details:");
+        System.out.println("Flight Number: " + flightNumber);
+        System.out.println("Destination: " + destination);
+        System.out.println("Distance: " + distance + " km");
+        System.out.println("Fuel Required: " + fuel + " liters");
+    }
+}
+
+public class A4 {
     public static void main(String[] args) {
-        A5 book1 = new A5("Java Basics");
-        A5 book2 = new A5("Python Programming", "Alice Smith");
-        A5 book3 = new A5("C++ Mastery", "Bob Johnson", 29.99);
-
-        book1.displayDetails();
-        book2.displayDetails();
-        book3.displayDetails();
+        Flight flight = new Flight();  
+        flight.showInfo();
     }
 }

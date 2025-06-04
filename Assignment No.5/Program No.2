@@ -1,37 +1,46 @@
-public class A5 {
-    String name;
-    int age;
-    String department;
+import java.util.Scanner;
+class Employee {
+    int empID;
+    String empName;
+    int deptID;
+    String bloodGroup;
+    double salary;
 
-    public A5() {
-        this(null, 0, null);
-    }
-    public A5(String name) {
-        this(name, 0, null);
-    }
-    public A5(String name, int age) {
-        this(name, age, null);
-    }
-    public A5(String name, int age, String department) {
-        this.name = name;
-        this.age = age;
-        this.department = department;
-    }
-    public void displayDetails() {
-        System.out.println("Name: " + (name != null ? name : "null"));
-        System.out.println("Age: " + age);
-        System.out.println("Department: " + (department != null ? department : "null"));
+    Employee(int eID, String eName, int dID, String bG, double s) {
+        empID = eID;
+        empName = eName;
+        deptID = dID;
+        bloodGroup = bG;
+        salary = s;
     }
 
+    void printEmployeeDetails() {
+        System.out.println("\nEmployee Details:");
+        System.out.println("Employee ID: " + empID);
+        System.out.println("Employee Name: " + empName);
+        System.out.println("Department ID: " + deptID);
+        System.out.println("Blood Group: " + bloodGroup);
+        System.out.println("Salary: " + salary);
+    }
+}
+
+public class A4 {
     public static void main(String[] args) {
-        A5 s1 = new A5();
-        A5 s2 = new A5("Alice");
-        A5 s3 = new A5("Bob", 20);
-        A5 s4 = new A5("Charlie", 22, "Computer Science");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Employee ID: ");
+        int empID = sc.nextInt();
+        sc.nextLine(); 
+        System.out.print("Enter Employee Name: ");
+        String empName = sc.nextLine();
+        System.out.print("Enter Department ID: ");
+        int deptID = sc.nextInt();
+        sc.nextLine();  
+        System.out.print("Enter Blood Group: ");
+        String bloodGroup = sc.nextLine();
+        System.out.print("Enter Salary: ");
+        double salary = sc.nextDouble();
 
-        s1.displayDetails();
-        s2.displayDetails();
-        s3.displayDetails();
-        s4.displayDetails();
+        Employee emp = new Employee(empID, empName, deptID, bloodGroup, salary);
+        emp.printEmployeeDetails();
     }
 }
