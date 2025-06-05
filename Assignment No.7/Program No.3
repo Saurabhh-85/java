@@ -1,0 +1,40 @@
+class Person {
+    String name;
+    int age;
+}
+class Employee extends Person {
+    int empId;
+    String department;
+}
+class Salary extends Employee {
+    double basicPay;
+    double HRA;
+    double DA;
+
+    double calculateSalary() {
+        return basicPay + HRA + DA;
+    }
+}
+
+public class A6 {
+    public static void main(String[] args) {
+        Salary emp = new Salary();
+        emp.name = "John Doe";
+        emp.age = 30;
+        emp.empId = 101;
+        emp.department = "IT";
+        emp.basicPay = 30000;
+        emp.HRA = 8000;
+        emp.DA = 5000;
+
+        System.out.println("Employee Details:");
+        System.out.println("Name: " + emp.name);
+        System.out.println("Age: " + emp.age);
+        System.out.println("Employee ID: " + emp.empId);
+        System.out.println("Department: " + emp.department);
+        System.out.println("Basic Pay: " + emp.basicPay);
+        System.out.println("HRA: " + emp.HRA);
+        System.out.println("DA: " + emp.DA);
+        System.out.println("Total Salary: " + emp.calculateSalary());
+    }
+}
