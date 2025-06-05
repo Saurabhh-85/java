@@ -1,40 +1,55 @@
-class Person {
+class UniversityMember {
     String name;
-    int age;
+    int id;
 }
-class Employee extends Person {
-    int empId;
+class Student extends UniversityMember {
+    String course;
+    int year;
+}
+class Professor extends UniversityMember {
+    String subject;
+    double salary;
+}
+class Staff extends UniversityMember {
     String department;
+    String position;
 }
-class Salary extends Employee {
-    double basicPay;
-    double HRA;
-    double DA;
-
-    double calculateSalary() {
-        return basicPay + HRA + DA;
-    }
-}
-
 public class A6 {
     public static void main(String[] args) {
-        Salary emp = new Salary();
-        emp.name = "John Doe";
-        emp.age = 30;
-        emp.empId = 101;
-        emp.department = "IT";
-        emp.basicPay = 30000;
-        emp.HRA = 8000;
-        emp.DA = 5000;
+        Student student = new Student();
+        student.name = "Alice";
+        student.id = 101;
+        student.course = "Computer Science";
+        student.year = 2;
 
-        System.out.println("Employee Details:");
-        System.out.println("Name: " + emp.name);
-        System.out.println("Age: " + emp.age);
-        System.out.println("Employee ID: " + emp.empId);
-        System.out.println("Department: " + emp.department);
-        System.out.println("Basic Pay: " + emp.basicPay);
-        System.out.println("HRA: " + emp.HRA);
-        System.out.println("DA: " + emp.DA);
-        System.out.println("Total Salary: " + emp.calculateSalary());
+        Professor professor = new Professor();
+        professor.name = "Dr. Smith";
+        professor.id = 201;
+        professor.subject = "Data Structures";
+        professor.salary = 75000;
+
+        Staff staff = new Staff();
+        staff.name = "Mr. Brown";
+        staff.id = 301;
+        staff.department = "Administration";
+        staff.position = "Clerk";
+
+        System.out.println("Student Details:");
+        System.out.println("Name: " + student.name);
+        System.out.println("ID: " + student.id);
+        System.out.println("Course: " + student.course);
+        System.out.println("Year: " + student.year);
+
+        System.out.println("Professor Details:");
+        System.out.println("Name: " + professor.name);
+        System.out.println("ID: " + professor.id);
+        System.out.println("Subject: " + professor.subject);
+        System.out.println("Salary: " + professor.salary);
+
+        System.out.println("Staff Details:");
+        System.out.println("Name: " + staff.name);
+        System.out.println("ID: " + staff.id);
+        System.out.println("Department: " + staff.department);
+        System.out.println("Position: " + staff.position);
     }
 }
