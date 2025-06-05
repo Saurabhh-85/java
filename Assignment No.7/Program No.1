@@ -1,0 +1,26 @@
+class Vehicle {
+    String brand;
+    String model;
+    int year;
+}
+class Car extends Vehicle {
+    String fuelType;
+    int seatingCapacity;
+}
+public class A6 {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.brand = "Toyota";
+        myCar.model = "Corolla";
+        myCar.year = 2022;
+        myCar.fuelType = "Petrol";
+        myCar.seatingCapacity = 5;
+        
+        System.out.println("Car Details:");
+        System.out.println("Brand: " + myCar.brand);
+        System.out.println("Model: " + myCar.model);
+        System.out.println("Year: " + myCar.year);
+        System.out.println("Fuel Type: " + myCar.fuelType);
+        System.out.println("Seating Capacity: " + myCar.seatingCapacity);
+    }
+}
