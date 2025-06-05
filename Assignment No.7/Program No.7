@@ -1,0 +1,50 @@
+class LibraryItem {
+    String title;
+    String publisher;
+    int year;
+}
+class Book extends LibraryItem {
+    String author;
+}
+class Magazine extends LibraryItem {
+    int issueNumber;
+}
+class Newspaper extends LibraryItem {
+    String date;
+}
+public class LibrarySystem {
+    public static void main(String[] args) {
+        Book book = new Book();
+        book.title = "Java Basics";
+        book.publisher = "TechBooks";
+        book.year = 2020;
+        book.author = "Alice";
+
+        Magazine magazine = new Magazine();
+        magazine.title = "Tech Monthly";
+        magazine.publisher = "Innovate Media";
+        magazine.year = 2023;
+        magazine.issueNumber = 12;
+        Newspaper newspaper = new Newspaper();
+        newspaper.title = "The Daily News";
+        newspaper.publisher = "NewsCorp";
+        newspaper.year = 2024;
+        newspaper.date = "2024-10-05";
+
+        System.out.println("Book Details:");
+        System.out.println("Title: " + book.title);
+        System.out.println("Publisher: " + book.publisher);
+        System.out.println("Year: " + book.year);
+        System.out.println("Author: " + book.author);
+        System.out.println("Magazine Details:");
+        System.out.println("Title: " + magazine.title);
+        System.out.println("Publisher: " + magazine.publisher);
+        System.out.println("Year: " + magazine.year);
+        System.out.println("Issue Number: " + magazine.issueNumber);
+        System.out.println("Newspaper Details:");
+        System.out.println("Title: " + newspaper.title);
+        System.out.println("Publisher: " + newspaper.publisher);
+        System.out.println("Year: " + newspaper.year);
+        System.out.println("Date: " + newspaper.date);
+    }
+}
