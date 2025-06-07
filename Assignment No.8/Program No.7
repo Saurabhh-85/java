@@ -1,0 +1,37 @@
+abstract class User {
+    String username;
+
+    public User(String username) {
+        this.username = username;
+    }
+    public void login() {
+        System.out.println(username + " has logged in.");
+    }
+}
+interface CourseContent {
+    void accessContent();
+}
+class Student extends User implements CourseContent {
+
+    public Student(String username) {
+        super(username);
+    }
+    public void accessContent() {
+        System.out.println(username + " is accessing course materials.");
+    }
+}
+public class A8 {
+    public static void main(String[] args) {
+        Student s1 = new Student("Andy Smith");
+        s1.login();           
+        s1.accessContent();   
+    }
+}
+
+/*🧠 Abstract Class vs Interface: Key Differences
+Feature                      Abstract Class (User)	                               Interface (CourseContent)
+Purpose	                   Shared base functionality	                           Define capabilities or contracts
+Can have method body?	    Yes (concrete methods)	                               Yes (Java 8+), but mostly abstract
+Can hold state (fields)?	Yes (e.g., username)	                               No (only static & final constants)
+Inheritance	                One abstract class per subclass	                       Multiple interfaces allowed
+Usage in this example	   login() method shared by all users	                   accessContent() for course access*/
