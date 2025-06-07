@@ -1,0 +1,31 @@
+interface PaymentGateway {
+    void pay(double amount);
+    void refund(double amount);
+}
+class CreditCardPayment implements PaymentGateway {
+    public void pay(double amount) {
+        System.out.println(amount + " debitted using Credit Card.");
+    }
+    public void refund(double amount) {
+        System.out.println(amount + " refunded to Credit Card.");
+    }
+}
+class UPIPayment implements PaymentGateway {
+    public void pay(double amount) {
+        System.out.println(amount + " paid using UPI.");
+    }
+    public void refund(double amount) {
+        System.out.println(amount + " refunded to UPI account.");
+    }
+}
+public class A8 {
+    public static void main(String[] args) {
+        PaymentGateway creditCard = new CreditCardPayment();
+        creditCard.pay(2500);
+        creditCard.refund(500);
+
+        PaymentGateway upi = new UPIPayment();
+        upi.pay(1200);
+        upi.refund(200);
+    }
+}
