@@ -1,0 +1,40 @@
+interface PollutionControl {
+    void checkEmission();
+}
+abstract class Vehicle {
+    public void start() {
+        System.out.println("Starting vehicle...");
+    }
+    public abstract void fuelType();
+}
+class Car extends Vehicle implements PollutionControl {
+    public void fuelType() {
+        System.out.println("Car uses Petrol.");
+    }
+    public void checkEmission() {
+        System.out.println("Car emission: Passed.");
+    }
+}
+class Bike extends Vehicle implements PollutionControl {
+    public void fuelType() {
+        System.out.println("Bike uses Petrol.");
+    }
+    public void checkEmission() {
+        System.out.println("Bike emission: Passed.");
+    }
+}
+public class A8 {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.start();
+        car.fuelType();
+        car.checkEmission();
+        
+        System.out.println();
+
+        Bike bike = new Bike();
+        bike.start();
+        bike.fuelType();
+        bike.checkEmission();
+    }
+}
