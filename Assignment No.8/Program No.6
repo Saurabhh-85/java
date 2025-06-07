@@ -1,0 +1,31 @@
+interface Switch {
+    void turnOn();
+    void turnOff();
+}
+interface Configure {
+    void setBrightness(int level);
+    void setColor(String color);
+}
+class SmartBulb implements Switch, Configure {
+    public void turnOn() {
+        System.out.println("SmartBulb is turning ON.");
+    }
+    public void turnOff() {
+        System.out.println("SmartBulb is turning OFF.");
+    }
+    public void setBrightness(int level) {
+        System.out.println("Brightness set to " + level + "%.");
+    }
+    public void setColor(String color) {
+        System.out.println("Color set to " + color + ".");
+    }
+}
+public class A8 {
+    public static void main(String[] args) {
+        SmartBulb bulb = new SmartBulb();
+        bulb.turnOn();
+        bulb.setBrightness(75);
+        bulb.setColor("Warm White");
+        bulb.turnOff();
+    }
+}
