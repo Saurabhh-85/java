@@ -1,0 +1,29 @@
+final class University {
+    String name;
+    String location;
+    public University(String name, String location) {
+        this.name = name;
+        this.location = location;
+    }
+    public void displayInfo() {
+        System.out.println("University Name: " + name);
+        System.out.println("Location: " + location);
+    }
+}
+// This will cause a compilation error
+/*
+class PrivateUniversity extends University {
+    // Attempting to extend final class
+}
+*/
+public class A8 {
+    public static void main(String[] args) {
+        University uni = new University("National University", "Delhi");
+        uni.displayInfo();
+    }
+}
+/*Observation:
+A final class in Java cannot be extended.This is used to prevent inheritance, making sure that no class can modify or override the behavior of the final class.This is useful in situations where You want to protect critical logic.The class is complete and shouldn't be extended.
+
+Conclusion:
+Using final helps enforce design rules in object-oriented programming. In this case, it ensures that no other type of university (like PrivateUniversity) can change the base behavior of University.*/
