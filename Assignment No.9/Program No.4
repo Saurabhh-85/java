@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class SDArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter how many array elements, you want to enter: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter array elements: ");
+        for(int i = 0; i < n; i++){
+            arr[i] = sc.nextInt();
+        }
+        int count_even = 0;
+        int count_odd = 0;
+        for(int i = 0; i < n; i++){
+            if(arr[i] % 2 == 0){
+                count_even += 1;
+            }
+            else{
+                count_odd += 1;
+            }
+        }
+        System.out.println("The number of even elements is: " + count_even);
+        System.out.println("The number of odd elements is: " + count_odd);
+    }
+}
