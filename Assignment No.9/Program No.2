@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class SDArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[8];
+        int sum = 0;
+        System.out.println("Enter array elements: ");
+        for(int i = 0; i < 8; i++){
+            arr[i] = sc.nextInt();
+            sum += arr[i];
+        }
+        double average = sum/8.0;
+        System.out.println("The sum of array elements are: " + sum);
+        System.out.println("The average of array elements is: " + average);
+    }
+}
