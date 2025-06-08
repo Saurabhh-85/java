@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class SDArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[7];
+        int temp;
+        System.out.println("Enter array elements: ");
+        for(int i = 0; i < 7; i++){
+            arr[i] = sc.nextInt();
+        }
+        for(int i = 0; i < 7; i++){
+            for(int j = 0; j < 6 - i; j++){
+                if(arr[j] > arr[j+1]){
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        System.out.println("The elements after sorting in ascending order are displayed below, separated by spaces: ");
+        for(int j = 0; j < 7; j++){
+            System.out.print(arr[j] + " ");
+        }
+    }
+}
