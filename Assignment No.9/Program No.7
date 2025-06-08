@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class SDArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[10];
+        System.out.println("Enter array elements: ");
+        for(int i = 0; i < 10; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("The duplicate elements are: ");
+        for(int i = 0; i < 10; i++){
+            boolean isDuplicate = false;
+            for(int k = 0; k < i; k++) {
+                if(arr[i] == arr[k]) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if(isDuplicate)
+                continue;
+            for(int j = i + 1; j < 10; j++){
+                if(arr[i] == arr[j]){
+                    System.out.println(arr[i]);
+                    break;
+                }
+            }
+        }
+    }
+}
