@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class SDArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr1 = new int[5];
+        int[] arr2 = new int[5];
+        System.out.println("Enter the elements of 1st array: ");
+        for(int i = 0; i < 5; i++){
+            arr1[i] = sc.nextInt();
+        }
+        System.out.println("Enter the elements of 2nd array: ");
+        for(int i = 0; i < 5; i++){
+            arr2[i] = sc.nextInt();
+        }
+        int[] merged_arr = new int[10];
+        for (int i = 0; i < 5; i++) {
+            merged_arr[i] = arr1[i];
+            merged_arr[i + 5] = arr2[i];
+        }
+        System.out.println("The merged array is defined as: ");
+        for(int i = 0; i < merged_arr.length; i++){
+            System.out.print(merged_arr[i] + " ");
+        }
+    }
+}
