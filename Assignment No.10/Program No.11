@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class DDArray {
+	public static void main(String[] args) {
+		int[][] arr = new int[3][3];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the elements of a 3x3 2D array: ");
+		for(int i = 0; i < arr.length; i++){
+			for(int j = 0; j < arr[i].length; j++){
+					arr[i][j] = sc.nextInt();
+			}
+		}
+		System.out.println("Enter the element, you want to search: ");
+		int num = sc.nextInt();
+		System.out.println("Searching.... ");
+		int IsFound = 0;
+		int row = 0, col = 0;
+		for(int i = 0; i < arr.length; i++){
+			for(int j = 0; j < arr[i].length; j++){
+				if(arr[i][j] == num){
+					IsFound = 1;
+					row = i;
+					col = j;
+				}
+			}
+		}
+		if(IsFound == 1) {
+			System.out.print("Element found at row number " + row + " and column number " + col + " of the matrix.");
+		}
+		else{
+			System.out.print("Element not found!");
+		}
+	}
+}
