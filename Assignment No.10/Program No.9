@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class DDArray {
+	public static void main(String[] args) {
+		int[][] arr = new int[3][3];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the elements of a 3x3 2D array: ");
+		for(int i = 0; i < arr.length; i++){
+			for(int j = 0; j < arr[i].length; j++){
+					arr[i][j] = sc.nextInt();
+			}
+		}
+		System.out.println("The main diagonal elements of the matrix is/are: ");
+		for(int i = 0; i < arr.length; i++){
+			for(int j = 0; j < arr[i].length; j++){
+				if(i == j){
+					System.out.print(arr[j][i] + "\t");
+				}
+			}
+		}
+	}
+}
