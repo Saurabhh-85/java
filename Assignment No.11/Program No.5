@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class StringsAssignment {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a sentence, that contains words 'cat' and 'dog': ");
+        String sen = sc.nextLine();
+        System.out.println("Enter the cat's name: ");
+        String cat_name = sc.nextLine();
+        System.out.println("Enter the dog's name: ");
+        String dog_name = sc.nextLine();
+        String updatedSentence = sen.replace("cat", cat_name).replace("dog", dog_name);
+        System.out.println("The updated sentence is: " + updatedSentence);
+    }
+}
