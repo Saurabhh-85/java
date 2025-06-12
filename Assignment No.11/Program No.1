@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class StringsAssignment {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String inp = sc.nextLine();
+        String s = inp.toLowerCase();
+        String reverse = "";
+        for(int i = s.length() - 1; i >= 0; i--) {
+            reverse += s.charAt(i);
+        }
+        if(s.equals(reverse)) {
+            System.out.println(inp + " is a Palindrome string.");
+        }
+        else {
+            System.out.println(inp + " isn't a Palindrome string.");
+        }
+    }
+}
