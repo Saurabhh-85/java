@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class StringsAssignment {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String s = sc.nextLine();
+        int UpperCase_count = 0;
+        int LowerCase_count = 0;
+        int Digits_count = 0;
+        int Spaces_count = 0;
+        for(int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if(Character.isUpperCase(ch)) {
+                UpperCase_count++;
+            }
+            else if(Character.isLowerCase(ch)) {
+                LowerCase_count++;
+            }
+            else if(Character.isDigit(ch)) {
+                Digits_count++;
+            }
+            else if(ch == ' ') {
+                Spaces_count++;
+            }
+        }
+        System.out.println("The number of Uppercase characters is/are: " + UpperCase_count);
+        System.out.println("The number of Lowercase characters is/are: " + LowerCase_count);
+        System.out.println("The number of Digit characters is/are: " + Digits_count);
+        System.out.println("The number of Spaces characters is/are: " + Spaces_count);
+    }
+}
