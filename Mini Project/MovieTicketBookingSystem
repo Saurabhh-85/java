@@ -1,0 +1,69 @@
+import java.util.Scanner;
+public class SimpleMovieBooking {
+    static String[] movies = {"Interstellar", "Inception", "Avengers"};
+    static boolean[][] seats = new boolean[3][5]; 
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+        do {
+            System.out.println("\n--- Movie Ticket Booking System ---");
+            System.out.println("1. View Movies");
+            System.out.println("2. Book Ticket");
+            System.out.println("3. Cancel Ticket");
+            System.out.println("4. Exit");
+            System.out.print("Enter choice: ");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1 -> viewMovies();
+                case 2 -> bookTicket(sc);
+                case 3 -> cancelTicket(sc);
+                case 4 -> System.out.println("Thank you for using the system.");
+                default -> System.out.println("Invalid choice.");
+            }
+        } while (choice != 4);
+    }
+    static void viewMovies() {
+        System.out.println("\nAvailable Movies:");
+        for (int i = 0; i < movies.length; i++) {
+            System.out.println((i + 1) + ". " + movies[i]);
+            System.out.print("   Seats: ");
+            for (int j = 0; j < seats[i].length; j++) {
+                if (seats[i][j]) {
+                    System.out.print("[BK] ");
+                } else {
+                    System.out.print("[" + (j + 1) + "] ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void bookTicket(Scanner sc) {
+        viewMovies();
+        System.out.print("Enter movie number: ");
+        int movieIndex = sc.nextInt() - 1;
+        System.out.print("Enter seat number (1-5): ");
+        int seatNumber = sc.nextInt() - 1;
+
+        if (!seats[movieIndex][seatNumber]) {
+            seats[movieIndex][seatNumber] = true;
+            System.out.println("Ticket booked successfully!");
+        } else {
+            System.out.println("Seat already booked.");
+        }
+    }
+    static void cancelTicket(Scanner sc) {
+        viewMovies();
+        System.out.print("Enter movie number: ");
+        int movieIndex = sc.nextInt() - 1;
+        System.out.print("Enter seat number to cancel (1-5): ");
+        int seatNumber = sc.nextInt() - 1;
+
+        if (seats[movieIndex][seatNumber]) {
+            seats[movieIndex][seatNumber] = false;
+            System.out.println("Ticket cancelled successfully.");
+        } else {
+            System.out.println("Seat is not booked yet.");
+        }
+    }
+}
