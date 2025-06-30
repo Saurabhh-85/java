@@ -1,3 +1,4 @@
+// KINDLY GO THROUGH THE README FILE PRESENT IN THIS FOLDER, BEFORE EXECUTING/RUNNING THE CODE OF THIS FILE.
 import java.sql.*;
 import java.util.*;
 public class BugTrackingSystem {
