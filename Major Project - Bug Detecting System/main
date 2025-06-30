@@ -1,0 +1,147 @@
+import java.sql.*;
+import java.util.*;
+public class BugTrackingSystem {
+    static Connection con;
+    static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        try {
+            Scanner input = new Scanner(System.in);
+            String user = "root";
+            System.out.print("Enter MySQL password: ");
+            String pass = input.nextLine();
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BDS", user, pass);
+            System.out.println("Connected to MySQL database.");
+
+            while (true) {
+                System.out.println("\n--- Bug Tracking System Menu ---");
+                System.out.println("1. Add Employee");
+                System.out.println("2. View Employees");
+                System.out.println("3. Add Bug");
+                System.out.println("4. View Bugs");
+                System.out.println("5. Exit");
+                System.out.print("Enter your choice: ");
+                int choice = sc.nextInt();
+
+                if (choice == 1) {
+                    addEmployee();
+                } else if (choice == 2) {
+                    viewEmployees();
+                } else if (choice == 3) {
+                    addBug();
+                } else if (choice == 4) {
+                    viewBugs();
+                } else if (choice == 5) {
+                    System.out.println("Exiting program...");
+                    break;
+                } else {
+                    System.out.println("Invalid choice, try again.");
+                }
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+    static void addEmployee() {
+        try {
+            System.out.print("Enter Employee Code: ");
+            int code = sc.nextInt(); sc.nextLine();
+            System.out.print("Enter Name: ");
+            String name = sc.nextLine();
+            System.out.print("Enter Email: ");
+            String email = sc.nextLine();
+            System.out.print("Enter Password: ");
+            String password = sc.nextLine();
+            System.out.print("Enter Gender: ");
+            String gender = sc.nextLine();
+            System.out.print("Enter DOB: ");
+            String dob = sc.nextLine();
+            System.out.print("Enter Mobile No: ");
+            long mobile = sc.nextLong(); sc.nextLine();
+            System.out.print("Enter Role: ");
+            String role = sc.nextLine();
+
+            String query = "INSERT INTO Employee VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, code);
+            ps.setString(2, name);
+            ps.setString(3, email);
+            ps.setString(4, password);
+            ps.setString(5, gender);
+            ps.setString(6, dob);
+            ps.setLong(7, mobile);
+            ps.setString(8, role);
+
+            ps.executeUpdate();
+            System.out.println("Employee added successfully.");
+        } catch (Exception e) {
+            System.out.println("Error while adding employee: " + e.getMessage());
+        }
+    }
+    static void viewEmployees() {
+        try {
+            String query = "SELECT empCode, empName, mobileNo, Role FROM Employee";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            System.out.println("\nCode | Name | Mobile Number | Role");
+            while (rs.next()) {
+                System.out.println(rs.getInt("empCode") + " | " + rs.getString("empName") + " | " +
+                                   rs.getLong("mobileNo") + " | " + rs.getString("Role"));
+            }
+        } catch (Exception e) {
+            System.out.println("Error while fetching employees: " + e.getMessage());
+        }
+    }
+    static void addBug() {
+        try {
+            System.out.print("Enter Bug No: ");
+            int bugNo = sc.nextInt();
+            System.out.print("Enter Bug Code: ");
+            int bugCode = sc.nextInt();
+            System.out.print("Enter Project ID: ");
+            int projectID = sc.nextInt();
+            System.out.print("Enter Tester Code: ");
+            int testerCode = sc.nextInt();
+            System.out.print("Enter Developer Code: ");
+            int devCode = sc.nextInt(); sc.nextLine();
+            System.out.print("Enter Status (pending/resolved): ");
+            String status = sc.nextLine();
+            System.out.print("Enter Bug Description: ");
+            String desc = sc.nextLine();
+
+            String query = "INSERT INTO BugReport VALUES (?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, bugNo);
+            ps.setInt(2, bugCode);
+            ps.setInt(3, projectID);
+            ps.setInt(4, testerCode);
+            ps.setInt(5, devCode);
+            ps.setString(6, status);
+            ps.setString(7, desc);
+
+            ps.executeUpdate();
+            System.out.println("Bug report added successfully.");
+        } catch (Exception e) {
+            System.out.println("Error while adding bug: " + e.getMessage());
+        }
+    }
+    static void viewBugs() {
+        try {
+            String query = "SELECT * FROM BugReport";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            System.out.println("\nBugNo | Code | ProjectID | Tester | Dev | Status | Desc");
+            while (rs.next()) {
+                System.out.println(rs.getInt("bugNo") + " | " + rs.getInt("bugCode") + " | " +
+                                   rs.getInt("projectID") + " | " + rs.getInt("TCode") + " | " +
+                                   rs.getInt("ECode") + " | " + rs.getString("status") + " | " +
+                                   rs.getString("bugDes"));
+            }
+        } catch (Exception e) {
+            System.out.println("Error while fetching bugs: " + e.getMessage());
+        }
+    }
+}
