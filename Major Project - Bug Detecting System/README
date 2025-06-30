@@ -1,0 +1,8 @@
+## 🛠 JDBC Driver Note:
+Please use the provided JDBC driver `mysql-connector-java-5.1.49.jar`. It is compatible with MySQL 5.0+ and avoids CLIENT_PLUGIN_AUTH errors.
+
+## 🔧 How to Run
+1. To Compile the code:
+   javac -cp ".;lib/mysql-connector-java-5.1.49.jar" BugTrackingSystem.java
+2. To Run the program:
+   java -cp ".;lib/mysql-connector-java-5.1.49.jar" BugTrackingSystem
